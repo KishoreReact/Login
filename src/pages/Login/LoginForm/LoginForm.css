@@ -1,0 +1,29 @@
+.with-background-image {
+    /*background-image: url('https://fastly.picsum.photos/id/496/4288/2848.jpg?hmac=mxfYonhwEzXP-Ure8BiS-W6bzJMrenWH-43jsUJCQvI'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #071063; /* Set the text color to make it readable on the background image */
+    padding: 20px; /* Add padding to make the content readable */
+}
+
+.sign-link{
+    font-weight: 500;
+    color: slategrey;
+    font-size: x-small;
+}
+
+.form-login{
+    align-items: center;
+}
+
+.form-control{
+    height:55px;
+    width: 80%;
+    border-radius: 10px; 
+}
+
+.sign_head{
+    font-size: 20px;
+    color: slategrey;
+}

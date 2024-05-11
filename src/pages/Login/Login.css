@@ -1,0 +1,93 @@
+.banner_content {
+    margin-bottom: 20px;
+    @media (orientation:portrait) and (min-width: 768px) and (max-width:820px){
+      margin-top: 200px;
+    }
+    @media (orientation:portrait) and (min-width: 910px){
+      margin-top: 400px;
+    }
+    @media (orientation:landscape) and (min-height: 800px) and (max-height:840px){
+      margin-top: 130px;
+    }
+    @media (orientation:landscape) and (min-height: 912px) and (max-height:1024px){
+      margin-top: 190px;
+    }
+    @media (orientation:landscape) and (min-height: 768px) and (max-height:780px){
+      margin-top: 100px;
+    }
+    @media (orientation:landscape) and (min-width: 1025px){
+      margin-top: 90px;
+    }
+   
+  }
+
+  .banner_title {
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      
+    }
+  }
+
+  .banner_desc {
+    font-size: 16px;
+    @media (min-width: 768px) {
+      font-size: 20px;
+      text-align: center;
+    
+    }
+    
+  }
+
+  @keyframes blinkAnimation {
+    0%, 100% {
+      color: rgb(204, 24, 33); /* Replace with your desired text color */
+    }
+    50% {
+      color:rgb(12, 23, 179);
+    }
+  }
+  
+  .blinking-text {
+    animation: blinkAnimation 1s infinite; /* Adjust the duration as needed */
+  }
+
+
+  .fullContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    justify-content: center;
+
+  
+    @media (min-width: 540px) {
+      min-height: calc(100vh - 82px);
+      margin-bottom: auto;
+    }
+  }
+  .login-align{
+    text-align-last: center;
+    border-color: slategrey;
+    border: ridge;
+    padding: 25px;
+  }
+
+  .login{
+    width: 100%;
+}
+
+.bg-image{
+    background-image: url('https://picsum.photos/seed/9/1920/1080'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+}
+.login-space{
+  margin:10px;
+}
+
+.Col-Login{
+  width:138%;
+}

@@ -1,0 +1,26 @@
+.custom-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; 
+    margin-left: 24px;
+  }
+  
+  .custom-table-row {
+    display: table-row;
+  }
+  
+  .custom-table-cell {
+    display: table-cell;
+    border: 1px solid #ddd; /* Optional: Add border for cell separation */
+    padding: 8px;
+  }
+
+  .list_employee{
+    height: 30px;
+    width: 50%;
+    margin:25px;
+    background-color: rgb(11, 105, 50);
+    border-radius: 10px;
+    text-align: center;
+  }
