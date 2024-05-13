@@ -1,8 +1,6 @@
-// DataTable.js
-
-import React from 'react';
-import { useTable, usePagination } from 'react-table';
-import getTableStyles from './tableStyles';
+import React from "react";
+import { useTable, usePagination } from "react-table";
+import getTableStyles from "./tableStyles";
 
 const DataTable = ({ columns, data }) => {
   const [pageSize, setPageSize] = React.useState(5);
@@ -46,26 +44,35 @@ const DataTable = ({ columns, data }) => {
           <option value={20}>20</option>
         </select>
       </div>
-      <table {...getTableProps()} style={{ ...tableStyles.table.style, borderSpacing: 0 }}>
+      <table
+        {...getTableProps()}
+        style={{ ...tableStyles.table.style, borderSpacing: 0 }}
+      >
         <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()} style={tableStyles.headRow.style}>
-              {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()} style={tableStyles.headCells.style}>
-                  {column.render('Header')}
+          {headerGroups.map((headerGroup) => (
+            <tr
+              {...headerGroup.getHeaderGroupProps()}
+              style={tableStyles.headRow.style}
+            >
+              {headerGroup.headers.map((column) => (
+                <th
+                  {...column.getHeaderProps()}
+                  style={tableStyles.headCells.style}
+                >
+                  {column.render("Header")}
                 </th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map(row => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()} style={tableStyles.rows.style}>
-                {row.cells.map(cell => (
+                {row.cells.map((cell) => (
                   <td {...cell.getCellProps()} style={tableStyles.cells.style}>
-                    {cell.render('Cell')}
+                    {cell.render("Cell")}
                   </td>
                 ))}
               </tr>
@@ -74,18 +81,20 @@ const DataTable = ({ columns, data }) => {
         </tbody>
       </table>
       <div style={tableStyles.pagination.style}>
-        <button onClick={() => previousPage()} style={tableStyles.pagination.pageButtonsStyle} disabled={!canPreviousPage}>
+        <button
+          onClick={() => previousPage()}
+          style={tableStyles.pagination.pageButtonsStyle}
+          disabled={!canPreviousPage}
+        >
           Previous
-        </button>{' '}
-        <button onClick={() => nextPage()} style={tableStyles.pagination.pageButtonsStyle} disabled={!canNextPage}>
+        </button>{" "}
+        <button
+          onClick={() => nextPage()}
+          style={tableStyles.pagination.pageButtonsStyle}
+          disabled={!canNextPage}
+        >
           Next
-        </button>{' '}
-        <span>
-          Page{' '}
-          <strong>
-            {pageIndex + 1} of {pageCount}
-          </strong>{' '}
-        </span>
+        </button>{" "}
       </div>
     </div>
   );

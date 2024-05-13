@@ -6,12 +6,17 @@ import "./LoginForm.css";
 import LoginButton from "../../../Components/Button/Button";
 import { MdLogin, MdOutlinePassword } from "react-icons/md";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = (props) => {
-  const navigate = useNavigate(); // Using useNavigate hook to get navigate function
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [fetchCompleted, setFetchCompleted] = useState(false);
 
   const initialValues = {
     email: "",
@@ -23,34 +28,27 @@ const LoginForm = (props) => {
     password: Yup.string().required("Required"),
   });
 
+
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
     try {
-      const headers = {
-        'Content-Type': 'application/json',
-        'accept': 'application/json',
-        'Accept': '*/*',
-        "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NWFlOGYxNGJhMTUyNTQ5YmM0NWM4ZTciLCJpYXQiOjE3MTQ2MzczMzksImV4cCI6MTcxNDY2NjEzOSwiaXNzIjoiVEVOQU5UMDEifQ.kDWhqNoD946S3Lk8tdYH4nmSX46txe4uwSWPrdJ5iqw"      };
-
       const res = await axios.post(
         "https://cors-anywhere.herokuapp.com/https://carxier-dev.tahrtech.in/api/v1/auth/signin",
         values,
-        { headers: headers }
       );
-
-      if (res.data === "exist") {
-        // Handle existing user
-        // Redirect to Employee component
-        navigate('/employee');
-      } else if (res.data === "notexist") {
-        setFieldError("email", "User is not signed up");
-      }
+      setFetchCompleted(true);
+      
+      // if (res.data === "exist") {
+      //  navigate('/employee');
+      // } else if (res.data === "notexist") {
+      //   setFieldError("email", "User is not signed up");
+      // }
     } catch (error) {
       console.error(error);
       alert("Something went wrong. Please try again.");
-    }
+    }console.log(fetchCompleted);
+
     setSubmitting(false);
   };
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -131,15 +129,13 @@ const LoginForm = (props) => {
                 className="error-message"
               />
             </div>
-            <LoginButton type="submit" disabled={isSubmitting}>
-              LOGIN
-            </LoginButton>
+            <LoginButton type="submit" disabled={isSubmitting}/>
+             
           </Form>
         )}
       </Formik>
       <div className="sign-link">
         <p>By Proceeding, you agree to Terms and privacy</p>
-        {/* <Link to="/signup">Signup Page</Link> */}
       </div>
     </div>
   );

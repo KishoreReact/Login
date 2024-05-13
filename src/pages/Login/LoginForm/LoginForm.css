@@ -1,10 +1,9 @@
 .with-background-image {
-    /*background-image: url('https://fastly.picsum.photos/id/496/4288/2848.jpg?hmac=mxfYonhwEzXP-Ure8BiS-W6bzJMrenWH-43jsUJCQvI'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #071063; /* Set the text color to make it readable on the background image */
-    padding: 20px; /* Add padding to make the content readable */
+    color: #071063; 
+    padding: 20px; 
 }
 
 .sign-link{
